@@ -14,7 +14,7 @@ function App() {
     <Router>
       <Routes>
         <Route path="/" element={<ShowPage />} />
-        <Route path="/upload" element={<FormPage onImageUpload={handleImageUpload} />} />
+        <Route path="/form" element={<FormPage onImageUpload={handleImageUpload} />} />
       </Routes>
     </Router>
   );
