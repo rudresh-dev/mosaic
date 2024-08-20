@@ -172,7 +172,7 @@ const FormPage = () => {
           console.error("Insert error:", insertError);
         } else {
           setLoading(false);
-          navigate("/upload");
+          navigate("/form");
           window.location.reload(); // Refresh the page
         }
       }
