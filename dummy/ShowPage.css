@@ -1,0 +1,307 @@
+.grid-container {
+    display: grid;
+    grid-template-columns: repeat(20, 96px); /* 20 columns of 96px each */
+    grid-template-rows: repeat(11, 96px); /* 11 rows of 96px each */
+    width: 1920px;
+    height: 1080px;
+    background-image: url('/bg.png'); /* Full background image */
+    background-size: cover;
+    background-position: center;
+    gap: 0px; /* No gaps between grid items */
+  }
+  
+  .grid-item {
+    position: relative;
+    width: 96px;
+    height: 96px;
+    background-color: transparent;
+    overflow: hidden;
+  }
+  
+  .grid-item .overlay-image {
+    position: absolute;
+    width: 1920px; /* Full size of the overlay image */
+    height: 1080px;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%) scale(0.5); /* Scale the image and center it */
+    background-image: url('/gf.png'); /* Your larger overlay image */
+    background-size: contain; /* Ensure the image fits within the grid */
+    background-position: center;
+    opacity: 0.7; /* Set the overlay image opacity to 70% */
+    pointer-events: none;
+    z-index: 2; /* Place it above the background */
+  }
+  
+  .grid-item .placed-image {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    opacity: 0.3; /* Set the placed image opacity to 30% */
+    z-index: 3; /* Place it above the overlay image */
+  }
+  
+  .grid-item .background-image {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    background-image: url('/bg.png'); /* Background image */
+    background-size: cover;
+    background-position: center;
+    opacity: 0; /* Set the background image opacity to 0% */
+    z-index: 1; /* Place it below everything */
+  }
+
+
+  .grid-item img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    opacity: 0.4; /* Set opacity to 40% */
+    object-position: center;
+  }
+
+
+
+  /* First Row */
+.grid-item:nth-child(1) .overlay-image { background-position: 0 0; }
+.grid-item:nth-child(2) .overlay-image { background-position: -96px 0; }
+.grid-item:nth-child(3) .overlay-image { background-position: -192px 0; }
+.grid-item:nth-child(4) .overlay-image { background-position: -288px 0; }
+.grid-item:nth-child(5) .overlay-image { background-position: -384px 0; }
+.grid-item:nth-child(6) .overlay-image { background-position: -480px 0; }
+.grid-item:nth-child(7) .overlay-image { background-position: -576px 0; }
+.grid-item:nth-child(8) .overlay-image { background-position: -672px 0; }
+.grid-item:nth-child(9) .overlay-image { background-position: -768px 0; }
+.grid-item:nth-child(10) .overlay-image { background-position: -864px 0; }
+.grid-item:nth-child(11) .overlay-image { background-position: -960px 0; }
+.grid-item:nth-child(12) .overlay-image { background-position: -1056px 0; }
+.grid-item:nth-child(13) .overlay-image { background-position: -1152px 0; }
+.grid-item:nth-child(14) .overlay-image { background-position: -1248px 0; }
+.grid-item:nth-child(15) .overlay-image { background-position: -1344px 0; }
+.grid-item:nth-child(16) .overlay-image { background-position: -1440px 0; }
+.grid-item:nth-child(17) .overlay-image { background-position: -1536px 0; }
+.grid-item:nth-child(18) .overlay-image { background-position: -1632px 0; }
+.grid-item:nth-child(19) .overlay-image { background-position: -1728px 0; }
+.grid-item:nth-child(20) .overlay-image { background-position: -1824px 0; }
+
+/* Second Row */
+.grid-item:nth-child(21) .overlay-image { background-position: 0 -96px; }
+.grid-item:nth-child(22) .overlay-image { background-position: -96px -96px; }
+.grid-item:nth-child(23) .overlay-image { background-position: -192px -96px; }
+.grid-item:nth-child(24) .overlay-image { background-position: -288px -96px; }
+.grid-item:nth-child(25) .overlay-image { background-position: -384px -96px; }
+.grid-item:nth-child(26) .overlay-image { background-position: -480px -96px; }
+.grid-item:nth-child(27) .overlay-image { background-position: -576px -96px; }
+.grid-item:nth-child(28) .overlay-image { background-position: -672px -96px; }
+.grid-item:nth-child(29) .overlay-image { background-position: -768px -96px; }
+.grid-item:nth-child(30) .overlay-image { background-position: -864px -96px; }
+.grid-item:nth-child(31) .overlay-image { background-position: -960px -96px; }
+.grid-item:nth-child(32) .overlay-image { background-position: -1056px -96px; }
+.grid-item:nth-child(33) .overlay-image { background-position: -1152px -96px; }
+.grid-item:nth-child(34) .overlay-image { background-position: -1248px -96px; }
+.grid-item:nth-child(35) .overlay-image { background-position: -1344px -96px; }
+.grid-item:nth-child(36) .overlay-image { background-position: -1440px -96px; }
+.grid-item:nth-child(37) .overlay-image { background-position: -1536px -96px; }
+.grid-item:nth-child(38) .overlay-image { background-position: -1632px -96px; }
+.grid-item:nth-child(39) .overlay-image { background-position: -1728px -96px; }
+.grid-item:nth-child(40) .overlay-image { background-position: -1824px -96px; }
+
+/* Third Row */
+.grid-item:nth-child(41) .overlay-image { background-position: 0 -192px; }
+.grid-item:nth-child(42) .overlay-image { background-position: -96px -192px; }
+.grid-item:nth-child(43) .overlay-image { background-position: -192px -192px; }
+.grid-item:nth-child(44) .overlay-image { background-position: -288px -192px; }
+.grid-item:nth-child(45) .overlay-image { background-position: -384px -192px; }
+.grid-item:nth-child(46) .overlay-image { background-position: -480px -192px; }
+.grid-item:nth-child(47) .overlay-image { background-position: -576px -192px; }
+.grid-item:nth-child(48) .overlay-image { background-position: -672px -192px; }
+.grid-item:nth-child(49) .overlay-image { background-position: -768px -192px; }
+.grid-item:nth-child(50) .overlay-image { background-position: -864px -192px; }
+.grid-item:nth-child(51) .overlay-image { background-position: -960px -192px; }
+.grid-item:nth-child(52) .overlay-image { background-position: -1056px -192px; }
+.grid-item:nth-child(53) .overlay-image { background-position: -1152px -192px; }
+.grid-item:nth-child(54) .overlay-image { background-position: -1248px -192px; }
+.grid-item:nth-child(55) .overlay-image { background-position: -1344px -192px; }
+.grid-item:nth-child(56) .overlay-image { background-position: -1440px -192px; }
+.grid-item:nth-child(57) .overlay-image { background-position: -1536px -192px; }
+.grid-item:nth-child(58) .overlay-image { background-position: -1632px -192px; }
+.grid-item:nth-child(59) .overlay-image { background-position: -1728px -192px; }
+.grid-item:nth-child(60) .overlay-image { background-position: -1824px -192px; }
+
+/* Fourth Row */
+.grid-item:nth-child(61) .overlay-image { background-position: 0 -288px; }
+.grid-item:nth-child(62) .overlay-image { background-position: -96px -288px; }
+.grid-item:nth-child(63) .overlay-image { background-position: -192px -288px; }
+.grid-item:nth-child(64) .overlay-image { background-position: -288px -288px; }
+.grid-item:nth-child(65) .overlay-image { background-position: -384px -288px; }
+.grid-item:nth-child(66) .overlay-image { background-position: -480px -288px; }
+.grid-item:nth-child(67) .overlay-image { background-position: -576px -288px; }
+.grid-item:nth-child(68) .overlay-image { background-position: -672px -288px; }
+.grid-item:nth-child(69) .overlay-image { background-position: -768px -288px; }
+.grid-item:nth-child(70) .overlay-image { background-position: -864px -288px; }
+.grid-item:nth-child(71) .overlay-image { background-position: -960px -288px; }
+.grid-item:nth-child(72) .overlay-image { background-position: -1056px -288px; }
+.grid-item:nth-child(73) .overlay-image { background-position: -1152px -288px; }
+.grid-item:nth-child(74) .overlay-image { background-position: -1248px -288px; }
+.grid-item:nth-child(75) .overlay-image { background-position: -1344px -288px; }
+.grid-item:nth-child(76) .overlay-image { background-position: -1440px -288px; }
+.grid-item:nth-child(77) .overlay-image { background-position: -1536px -288px; }
+.grid-item:nth-child(78) .overlay-image { background-position: -1632px -288px; }
+.grid-item:nth-child(79) .overlay-image { background-position: -1728px -288px; }
+.grid-item:nth-child(80) .overlay-image { background-position: -1824px -288px; }
+
+/* Fifth Row */
+.grid-item:nth-child(81) .overlay-image { background-position: 0 -384px; }
+.grid-item:nth-child(82) .overlay-image { background-position: -96px -384px; }
+.grid-item:nth-child(83) .overlay-image { background-position: -192px -384px; }
+.grid-item:nth-child(84) .overlay-image { background-position: -288px -384px; }
+.grid-item:nth-child(85) .overlay-image { background-position: -384px -384px; }
+.grid-item:nth-child(86) .overlay-image { background-position: -480px -384px; }
+.grid-item:nth-child(87) .overlay-image { background-position: -576px -384px; }
+.grid-item:nth-child(88) .overlay-image { background-position: -672px -384px; }
+.grid-item:nth-child(89) .overlay-image { background-position: -768px -384px; }
+.grid-item:nth-child(90) .overlay-image { background-position: -864px -384px; }
+.grid-item:nth-child(91) .overlay-image { background-position: -960px -384px; }
+.grid-item:nth-child(92) .overlay-image { background-position: -1056px -384px; }
+.grid-item:nth-child(93) .overlay-image { background-position: -1152px -384px; }
+.grid-item:nth-child(94) .overlay-image { background-position: -1248px -384px; }
+.grid-item:nth-child(95) .overlay-image { background-position: -1344px -384px; }
+.grid-item:nth-child(96) .overlay-image { background-position: -1440px -384px; }
+.grid-item:nth-child(97) .overlay-image { background-position: -1536px -384px; }
+.grid-item:nth-child(98) .overlay-image { background-position: -1632px -384px; }
+.grid-item:nth-child(99) .overlay-image { background-position: -1728px -384px; }
+.grid-item:nth-child(100) .overlay-image { background-position: -1824px -384px; }
+
+/* Sixth Row */
+.grid-item:nth-child(101) .overlay-image { background-position: 0 -480px; }
+.grid-item:nth-child(102) .overlay-image { background-position: -96px -480px; }
+.grid-item:nth-child(103) .overlay-image { background-position: -192px -480px; }
+.grid-item:nth-child(104) .overlay-image { background-position: -288px -480px; }
+.grid-item:nth-child(105) .overlay-image { background-position: -384px -480px; }
+.grid-item:nth-child(106) .overlay-image { background-position: -480px -480px; }
+.grid-item:nth-child(107) .overlay-image { background-position: -576px -480px; }
+.grid-item:nth-child(108) .overlay-image { background-position: -672px -480px; }
+.grid-item:nth-child(109) .overlay-image { background-position: -768px -480px; }
+.grid-item:nth-child(110) .overlay-image { background-position: -864px -480px; }
+.grid-item:nth-child(111) .overlay-image { background-position: -960px -480px; }
+.grid-item:nth-child(112) .overlay-image { background-position: -1056px -480px; }
+.grid-item:nth-child(113) .overlay-image { background-position: -1152px -480px; }
+.grid-item:nth-child(114) .overlay-image { background-position: -1248px -480px; }
+.grid-item:nth-child(115) .overlay-image { background-position: -1344px -480px; }
+.grid-item:nth-child(116) .overlay-image { background-position: -1440px -480px; }
+.grid-item:nth-child(117) .overlay-image { background-position: -1536px -480px; }
+.grid-item:nth-child(118) .overlay-image { background-position: -1632px -480px; }
+.grid-item:nth-child(119) .overlay-image { background-position: -1728px -480px; }
+.grid-item:nth-child(120) .overlay-image { background-position: -1824px -480px; }
+
+/* Seventh Row */
+.grid-item:nth-child(121) .overlay-image { background-position: 0 -576px; }
+.grid-item:nth-child(122) .overlay-image { background-position: -96px -576px; }
+.grid-item:nth-child(123) .overlay-image { background-position: -192px -576px; }
+.grid-item:nth-child(124) .overlay-image { background-position: -288px -576px; }
+.grid-item:nth-child(125) .overlay-image { background-position: -384px -576px; }
+.grid-item:nth-child(126) .overlay-image { background-position: -480px -576px; }
+.grid-item:nth-child(127) .overlay-image { background-position: -576px -576px; }
+.grid-item:nth-child(128) .overlay-image { background-position: -672px -576px; }
+.grid-item:nth-child(129) .overlay-image { background-position: -768px -576px; }
+.grid-item:nth-child(130) .overlay-image { background-position: -864px -576px; }
+.grid-item:nth-child(131) .overlay-image { background-position: -960px -576px; }
+.grid-item:nth-child(132) .overlay-image { background-position: -1056px -576px; }
+.grid-item:nth-child(133) .overlay-image { background-position: -1152px -576px; }
+.grid-item:nth-child(134) .overlay-image { background-position: -1248px -576px; }
+.grid-item:nth-child(135) .overlay-image { background-position: -1344px -576px; }
+.grid-item:nth-child(136) .overlay-image { background-position: -1440px -576px; }
+.grid-item:nth-child(137) .overlay-image { background-position: -1536px -576px; }
+.grid-item:nth-child(138) .overlay-image { background-position: -1632px -576px; }
+.grid-item:nth-child(139) .overlay-image { background-position: -1728px -576px; }
+.grid-item:nth-child(140) .overlay-image { background-position: -1824px -576px; }
+
+/* Eighth Row */
+.grid-item:nth-child(141) .overlay-image { background-position: 0 -672px; }
+.grid-item:nth-child(142) .overlay-image { background-position: -96px -672px; }
+.grid-item:nth-child(143) .overlay-image { background-position: -192px -672px; }
+.grid-item:nth-child(144) .overlay-image { background-position: -288px -672px; }
+.grid-item:nth-child(145) .overlay-image { background-position: -384px -672px; }
+.grid-item:nth-child(146) .overlay-image { background-position: -480px -672px; }
+.grid-item:nth-child(147) .overlay-image { background-position: -576px -672px; }
+.grid-item:nth-child(148) .overlay-image { background-position: -672px -672px; }
+.grid-item:nth-child(149) .overlay-image { background-position: -768px -672px; }
+.grid-item:nth-child(150) .overlay-image { background-position: -864px -672px; }
+.grid-item:nth-child(151) .overlay-image { background-position: -960px -672px; }
+.grid-item:nth-child(152) .overlay-image { background-position: -1056px -672px; }
+.grid-item:nth-child(153) .overlay-image { background-position: -1152px -672px; }
+.grid-item:nth-child(154) .overlay-image { background-position: -1248px -672px; }
+.grid-item:nth-child(155) .overlay-image { background-position: -1344px -672px; }
+.grid-item:nth-child(156) .overlay-image { background-position: -1440px -672px; }
+.grid-item:nth-child(157) .overlay-image { background-position: -1536px -672px; }
+.grid-item:nth-child(158) .overlay-image { background-position: -1632px -672px; }
+.grid-item:nth-child(159) .overlay-image { background-position: -1728px -672px; }
+.grid-item:nth-child(160) .overlay-image { background-position: -1824px -672px; }
+
+/* Ninth Row */
+.grid-item:nth-child(161) .overlay-image { background-position: 0 -768px; }
+.grid-item:nth-child(162) .overlay-image { background-position: -96px -768px; }
+.grid-item:nth-child(163) .overlay-image { background-position: -192px -768px; }
+.grid-item:nth-child(164) .overlay-image { background-position: -288px -768px; }
+.grid-item:nth-child(165) .overlay-image { background-position: -384px -768px; }
+.grid-item:nth-child(166) .overlay-image { background-position: -480px -768px; }
+.grid-item:nth-child(167) .overlay-image { background-position: -576px -768px; }
+.grid-item:nth-child(168) .overlay-image { background-position: -672px -768px; }
+.grid-item:nth-child(169) .overlay-image { background-position: -768px -768px; }
+.grid-item:nth-child(170) .overlay-image { background-position: -864px -768px; }
+.grid-item:nth-child(171) .overlay-image { background-position: -960px -768px; }
+.grid-item:nth-child(172) .overlay-image { background-position: -1056px -768px; }
+.grid-item:nth-child(173) .overlay-image { background-position: -1152px -768px; }
+.grid-item:nth-child(174) .overlay-image { background-position: -1248px -768px; }
+.grid-item:nth-child(175) .overlay-image { background-position: -1344px -768px; }
+.grid-item:nth-child(176) .overlay-image { background-position: -1440px -768px; }
+.grid-item:nth-child(177) .overlay-image { background-position: -1536px -768px; }
+.grid-item:nth-child(178) .overlay-image { background-position: -1632px -768px; }
+.grid-item:nth-child(179) .overlay-image { background-position: -1728px -768px; }
+.grid-item:nth-child(180) .overlay-image { background-position: -1824px -768px; }
+
+/* Tenth Row */
+.grid-item:nth-child(181) .overlay-image { background-position: 0 -864px; }
+.grid-item:nth-child(182) .overlay-image { background-position: -96px -864px; }
+.grid-item:nth-child(183) .overlay-image { background-position: -192px -864px; }
+.grid-item:nth-child(184) .overlay-image { background-position: -288px -864px; }
+.grid-item:nth-child(185) .overlay-image { background-position: -384px -864px; }
+.grid-item:nth-child(186) .overlay-image { background-position: -480px -864px; }
+.grid-item:nth-child(187) .overlay-image { background-position: -576px -864px; }
+.grid-item:nth-child(188) .overlay-image { background-position: -672px -864px; }
+.grid-item:nth-child(189) .overlay-image { background-position: -768px -864px; }
+.grid-item:nth-child(190) .overlay-image { background-position: -864px -864px; }
+.grid-item:nth-child(191) .overlay-image { background-position: -960px -864px; }
+.grid-item:nth-child(192) .overlay-image { background-position: -1056px -864px; }
+.grid-item:nth-child(193) .overlay-image { background-position: -1152px -864px; }
+.grid-item:nth-child(194) .overlay-image { background-position: -1248px -864px; }
+.grid-item:nth-child(195) .overlay-image { background-position: -1344px -864px; }
+.grid-item:nth-child(196) .overlay-image { background-position: -1440px -864px; }
+.grid-item:nth-child(197) .overlay-image { background-position: -1536px -864px; }
+.grid-item:nth-child(198) .overlay-image { background-position: -1632px -864px; }
+.grid-item:nth-child(199) .overlay-image { background-position: -1728px -864px; }
+.grid-item:nth-child(200) .overlay-image { background-position: -1824px -864px; }
+
+/* Eleventh Row */
+.grid-item:nth-child(201) .overlay-image { background-position: 0 -960px; }
+.grid-item:nth-child(202) .overlay-image { background-position: -96px -960px; }
+.grid-item:nth-child(203) .overlay-image { background-position: -192px -960px; }
+.grid-item:nth-child(204) .overlay-image { background-position: -288px -960px; }
+.grid-item:nth-child(205) .overlay-image { background-position: -384px -960px; }
+.grid-item:nth-child(206) .overlay-image { background-position: -480px -960px; }
+.grid-item:nth-child(207) .overlay-image { background-position: -576px -960px; }
+.grid-item:nth-child(208) .overlay-image { background-position: -672px -960px; }
+.grid-item:nth-child(209) .overlay-image { background-position: -768px -960px; }
+.grid-item:nth-child(210) .overlay-image { background-position: -864px -960px; }
+.grid-item:nth-child(211) .overlay-image { background-position: -960px -960px; }
+.grid-item:nth-child(212) .overlay-image { background-position: -1056px -960px; }
+.grid-item:nth-child(213) .overlay-image { background-position: -1152px -960px; }
+.grid-item:nth-child(214) .overlay-image { background-position: -1248px -960px; }
+.grid-item:nth-child(215) .overlay-image { background-position: -1344px -960px; }
+.grid-item:nth-child(216) .overlay-image { background-position: -1440px -960px; }
+.grid-item:nth-child(217) .overlay-image { background-position: -1536px -960px; }
+.grid-item:nth-child(218) .overlay-image { background-position: -1632px -960px; }
+.grid-item:nth-child(219) .overlay-image { background-position: -1728px -960px; }
+.grid-item:nth-child(220) .overlay-image { background-position: -1824px -960px; }
