@@ -134,7 +134,8 @@
 // export default ShowPage;
 
 
-import React, { useState, useEffect, useRef } from 'react';
+
+import { useState, useEffect, useRef } from 'react';
 import { supabase } from './supabaseClient';
 import './ShowPage.css';
 import { gsap } from 'gsap';
@@ -142,8 +143,8 @@ import { gsap } from 'gsap';
 const ShowPage = () => {
   const [images, setImages] = useState([]);
   const imageRefs = useRef([]); // Array to hold references to each image
-  const [hasImage, setHasImage] = useState(Array(200).fill(false)); // Initialize with false for all grid items
-
+  const [hasImage, setHasImage] = useState(Array(200).fill(false)); // Initialize with false for all grid items\
+  
   useEffect(() => {
     // Fetch images from Supabase
     const fetchImages = async () => {
@@ -206,16 +207,13 @@ const ShowPage = () => {
         zIndex: 1000, // Ensure it appears on top of other elements
         transformOrigin: 'center center',
       });
-
       // Create a timeline
       const tl = gsap.timeline();
-
       // Step 1: Stay in the center for 2 seconds
       tl.to(lastImageRef, {
         duration:2 , // Stay in center for 2 seconds
         ease: 'none', // No easing, stay still
       });
-
       // Step 2: Move to its grid position with linear animation
       tl.to(lastImageRef, {
         duration: 2.5, // Duration of the move to grid position
@@ -267,7 +265,6 @@ const ShowPage = () => {
       )}
     </div>
   ));
-
   return (
     <div className="grid-container">
       {gridImages}
