@@ -1,8 +1,4 @@
 
-
-
-
-
 // import React, { useState, useEffect, useRef } from 'react';
 // import { supabase } from './supabaseClient';
 // import './ShowPage.css';
@@ -11,7 +7,7 @@
 // const ShowPage = () => {
 //   const [images, setImages] = useState([]);
 //   const imageRefs = useRef([]); // Array to hold references to each image
-//   const [hasImage, setHasImage] = useState([]); // Array to track grid items with images
+//   const [hasImage, setHasImage] = useState(Array(200).fill(false)); // Initialize with false for all grid items
 
 //   useEffect(() => {
 //     // Fetch images from Supabase
@@ -25,7 +21,9 @@
 //         console.error('Error fetching images:', error);
 //       } else {
 //         setImages(data.map(img => img.url));
-//         setHasImage(Array(data.length).fill(true)); // Set true for all fetched images
+//         const updatedHasImage = Array(200).fill(false);
+//         data.forEach((_, index) => updatedHasImage[index] = true);
+//         setHasImage(updatedHasImage);
 //       }
 //     };
 
@@ -36,7 +34,11 @@
 //       .channel('public:images')
 //       .on('postgres_changes', { event: 'INSERT', schema: 'public', table: 'images' }, payload => {
 //         setImages(prevImages => [payload.new.url, ...prevImages]);
-//         setHasImage(prevHasImage => [true, ...prevHasImage]); // Update state to show images
+//         setHasImage(prevHasImage => {
+//           const newHasImage = [...prevHasImage];
+//           newHasImage[0] = true; // Assume new images go to the start
+//           return newHasImage;
+//         });
 //       })
 //       .subscribe();
 
@@ -132,20 +134,6 @@
 // export default ShowPage;
 
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 import React, { useState, useEffect, useRef } from 'react';
 import { supabase } from './supabaseClient';
 import './ShowPage.css';
@@ -219,16 +207,25 @@ const ShowPage = () => {
         transformOrigin: 'center center',
       });
 
-      // Animate the image from the center of the screen to its grid position
-      gsap.to(lastImageRef, {
-        duration: 2.5, // Slow and smooth animation
+      // Create a timeline
+      const tl = gsap.timeline();
+
+      // Step 1: Stay in the center for 2 seconds
+      tl.to(lastImageRef, {
+        duration:2 , // Stay in center for 2 seconds
+        ease: 'none', // No easing, stay still
+      });
+
+      // Step 2: Move to its grid position with linear animation
+      tl.to(lastImageRef, {
+        duration: 2.5, // Duration of the move to grid position
         width: gridItemRect.width, // Scale down to the size of the grid item
         height: gridItemRect.height, // Scale down to the size of the grid item
         top: gridItemRect.top + window.scrollY, // Move to its original position within the grid
         left: gridItemRect.left + window.scrollX, // Move to its original position within the grid
         scaleX: 1, // Ensure no distortion in width
         scaleY: 1, // Ensure no distortion in height
-        ease: 'linear', // Ensure a linear transition
+        ease: 'linear', // Linear transition
         onComplete: () => {
           // Reset position styles after animation
           gsap.set(lastImageRef, {
